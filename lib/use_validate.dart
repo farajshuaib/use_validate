@@ -1,3 +1,8 @@
-export './src/validation_types.dart';
-export './src/extensions/rules.dart';
-export './src/functions/index.dart';
+/// Support for doing something awesome.
+///
+/// More dartdocs go here.
+library;
+
+export 'src/use_validate_base.dart';
+
+// TODO: Export any libraries intended for clients of this package.
