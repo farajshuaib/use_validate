@@ -56,14 +56,16 @@ class _MyAppState extends State<MyApp> {
                   TextFormField(
                     initialValue: _email,
                     onChanged: (value) => _email = value,
+                    onFieldSubmitted: (value) => {
+                      if(validate(value: value, validationRules: [FieldRule.required, FieldRule.email])){
+                        // TODO your code here
+                      }
+                    },
                     decoration: const InputDecoration(
                       labelText: 'Email',
                       hintText: 'Enter your email',
                     ),
                     validator: (value) {
-                      if (value == null) {
-                        return '';
-                      }
                       return errorMessage(value: value, validationRules: [FieldRule.required, FieldRule.email]);
                     },
                   ),
@@ -76,10 +78,12 @@ class _MyAppState extends State<MyApp> {
                       labelText: 'Password',
                       hintText: 'Enter your password',
                     ),
-                    validator: (value) {
-                      if (value == null) {
-                        return '';
+                    onFieldSubmitted: (value) => {
+                      if(validate(value: value, validationRules: [FieldRule.required, FieldRule.email])){
+                        // TODO your code here
                       }
+                    },
+                    validator: (value) {
                       return errorMessage(value: value, validationRules: [FieldRule.required, FieldRule.password]);
                     },
                   ),
