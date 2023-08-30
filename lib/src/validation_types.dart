@@ -1,0 +1,17 @@
+enum FieldRule {
+  required,
+  email,
+  password,
+  name,
+  phone,
+  empty,
+  arabic,
+  english,
+  phoneWithCode,
+  number,
+  date,
+  decimal,
+  negativeNumbers,
+  moreThanZero,
+  none,
+}
