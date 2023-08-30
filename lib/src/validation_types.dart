@@ -4,7 +4,6 @@ enum FieldRule {
   password,
   name,
   phone,
-  empty,
   arabic,
   english,
   phoneWithCode,
@@ -13,5 +12,4 @@ enum FieldRule {
   decimal,
   negativeNumbers,
   moreThanZero,
-  none,
 }

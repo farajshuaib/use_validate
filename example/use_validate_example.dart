@@ -1,6 +1,6 @@
 import 'package:use_validate/use_validate.dart';
 
 void main() {
-  var awesome = Awesome();
-  print('awesome: ${awesome.isAwesome}');
+  var name = "Faraj Shuaib";
+  print(validate(value: name, validationRules: [FieldRule.required, FieldRule.name]));
 }
