@@ -56,17 +56,20 @@ class _MyAppState extends State<MyApp> {
                   TextFormField(
                     initialValue: _email,
                     onChanged: (value) => _email = value,
-                    onFieldSubmitted: (value) => {
-                      if(validate(value: value, validationRules: [FieldRule.required, FieldRule.email])){
-                        // TODO your code here
-                      }
-                    },
                     decoration: const InputDecoration(
                       labelText: 'Email',
                       hintText: 'Enter your email',
                     ),
                     validator: (value) {
-                      return errorMessage(value: value, validationRules: [FieldRule.required, FieldRule.email]);
+                      final ValidationResult validationResult = validate(value: name,
+                          validationRules: [
+                            ValidationRule(pattern: FieldRule.required),
+                            ValidationRule(pattern: FieldRule.email, errorMessage: "please enter a valid email"),
+                          ]);
+                      if (!validationResult.isValid) {
+                        return validationResult.errorMessage;
+                      }
+                      return '';
                     },
                   ),
                   const SizedBox(height: 20),
@@ -78,13 +81,17 @@ class _MyAppState extends State<MyApp> {
                       labelText: 'Password',
                       hintText: 'Enter your password',
                     ),
-                    onFieldSubmitted: (value) => {
-                      if(validate(value: value, validationRules: [FieldRule.required, FieldRule.email])){
-                        // TODO your code here
-                      }
-                    },
+
                     validator: (value) {
-                      return errorMessage(value: value, validationRules: [FieldRule.required, FieldRule.password]);
+                      final ValidationResult validationResult = validate(value: name,
+                          validationRules: [
+                            ValidationRule(pattern: FieldRule.required),
+                            ValidationRule(pattern: FieldRule.password, errorMessage: "please enter a valid password"),
+                          ]);
+                      if (!validationResult.isValid) {
+                        return validationResult.errorMessage;
+                      }
+                      return '';
                     },
                   ),
                   const SizedBox(height: 20),
@@ -97,7 +104,8 @@ class _MyAppState extends State<MyApp> {
                 ],
               ),
             )),
-      ),
+      )
+      ,
     );
   }
 }
