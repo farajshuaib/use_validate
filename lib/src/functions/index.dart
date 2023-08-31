@@ -1,13 +1,13 @@
-import 'package:use_validate/src/validation_types.dart';
-import 'package:use_validate/src/extensions/rules.dart';
-import 'package:use_validate/src/extensions/error_messages.dart';
+import 'package:use_validate/src/model/ValidationResult.dart';
+import 'package:use_validate/src/model/validation_rule.dart';
 
-bool validate({required String? value, required List<FieldRule> validationRules}) {
-  if(value == null) return false;
-  return validationRules.every((element) => RegExp(element.value).hasMatch(value));
-}
+ValidationResult validate({required String? value, required List<ValidationRule> validationRules}) {
+  if (value == null) return ValidationResult(false, "this filed is null");
 
-String errorMessage({required String? value, required List<FieldRule> validationRules}) {
-  if(value == null) return "";
-  return validationRules.firstWhere((element) => !RegExp(element.value).hasMatch(value)).error;
+  try {
+    final validationRule = validationRules.firstWhere((element) => !RegExp(element.pattern!).hasMatch(value));
+    return ValidationResult(false, validationRule.errorMessage ?? "Invalid Field");
+  } catch (e) {
+    return ValidationResult(true, "");
+  }
 }

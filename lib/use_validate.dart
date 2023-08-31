@@ -3,6 +3,7 @@
 /// More dartdocs go here.
 library;
 
-export 'src/use_validate_base.dart';
+export 'package:use_validate/src/filed_rule.dart';
+export 'package:use_validate/src/functions/index.dart';
 
 // TODO: Export any libraries intended for clients of this package.
