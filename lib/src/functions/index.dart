@@ -1,4 +1,4 @@
-import 'package:use_validate/src/model/ValidationResult.dart';
+import 'package:use_validate/src/model/validation_result.dart';
 import 'package:use_validate/src/model/validation_rule.dart';
 
 ValidationResult validate({required String? value, required List<ValidationRule> validationRules}) {
