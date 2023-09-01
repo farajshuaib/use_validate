@@ -6,10 +6,12 @@
 
 a small library contain utils validation regex to boost your development process and focus on your business logic
 
+it's similar to yup the validation library for javascript, if you come from web development you will find it familiar
+
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+just add the package to your pubspec.yaml file
+
 
 ## Usage
 
@@ -111,7 +113,4 @@ class _MyAppState extends State<MyApp> {
 }
 
 ```
-
-## Additional information
-
 

@@ -1,6 +1,6 @@
 name: use_validate
 description: A small library for validating input fields.
-version: 1.0.3
+version: 1.0.4
 repository: https://github.com/farajshuaib/use_validate
 homepage: https://github.com/farajshuaib/use_validate
 

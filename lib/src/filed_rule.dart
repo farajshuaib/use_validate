@@ -1,28 +1,35 @@
 class FieldRule {
+  // it's check if the value is empty or not
   static String get required {
     return r".{1,}";
   }
 
+  // it's check if the value is valid email or not
   static String get email {
     return r"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
   }
 
+  // it's check if the value is valid password or not
   static String get password {
     return r"^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,16}$";
   }
 
+  // it's check if the value is valid username or not
   static String get name {
     return r".{3,}";
   }
 
+  // it's check if the value is valid phone number or not (only numbers) and the length is 10
   static String get phone {
     return r"^[0-9]{10,10}$";
   }
 
+  // it's check if the value contains only arabic letters and the length is more than 3
   static String get arabic {
     return r"^[\u0621-\u064A\u0660-\u0669 ]{3,}$";
   }
 
+  // it's check if the value contains only english letters and the length is more than 3
   static String get english {
     return r"^[A-Za-z]{3,}$";
   }
@@ -42,14 +49,17 @@ class FieldRule {
     return r"^[\u0621-\u064A\u0660-\u0669 A-Za-z 0-9\.\,\-\_\+\=\*\&\^\%\$\#\@\!\~\`\(\)\{\}\[\]\:\;\'\<\>\?\/\|]{3,}$";
   }
 
+  // phone number with country code
   static String get phoneWithCode {
     return r"^\+[0-9]{12,12}$";
   }
 
+  // only numbers
   static String get number {
     return r"^[0-9]{1,}$";
   }
 
+  // only dates
   static String get date {
     return r"(19|20)[0-9]{2}[- /.](0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])";
   }
